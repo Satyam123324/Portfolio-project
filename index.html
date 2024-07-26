@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Satyam's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection"> <div> Hi, My name is <span class="col">Satyam</span></div>
+                <div>and I am a passionate</div>
+
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+                <div class="button">
+                    <button id="rebtn">Download Resume</button>
+                    <button id="btn">Visit Github</button>
+                </div>
+
+            </div>
+            <div class="rightsection">
+                <img src="sat.png" alt="png">
+            </div>
+        </section>
+        <hr id="skills">
+        <section class="secondsection">
+            <span class="rudra"> What I learn so far</span>
+
+            <h1>Skills</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="top" src="html.png" alt="html logo">
+                    <div class="verticaltitle">Hyper text markup language (HTML)</div>
+                </div>
+                <div class="vertical">
+                    <img class="top" src="css.png" alt="css logo">
+                    <div class="verticaltitle">Cascading style sheet (CSS)</div>
+                </div>
+                <div class="vertical">
+                    <img class="top" src="js.png" alt="js logo">
+                    <div class="verticaltitle">Javascript (JS)</div>
+                </div>
+                <div class="vertical">
+                    <img class="top" src="python.png" alt="py logo">
+                    <div class="verticaltitle">Basics of (python) language</div>
+                </div>
+                <div class="vertical">
+                    <img class="top" src="c.png" alt="c logo">
+                    <div class="verticaltitle">Basics of (C) language</div>
+                </div>
+                <div class="vertical">
+                    <img class="top" src="dsa.png" alt="dsa logo">
+                    <div class="verticaltitle">Basics of data structure and algorithm (DSA)</div>
+                </div>
+
+            </div>
+        </section>
+        <hr id="services">
+        <section class="thirdsection">
+            <div class="head">
+                <h1>Services</h1>
+            </div>
+            <div class="services">
+                <div class="card">
+             
+                    <h3>Website development</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum ipsa voluptatibus dolorem vitae
+                        nobis voluptatum, hic eum qui similique minus?</p>
+                </div>
+                <div class="card">
+                    
+                    <h3>App development</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum ipsa voluptatibus dolorem vitae
+                        nobis voluptatum, hic eum qui similique minus?</p>
+                </div>
+                <div class="card">
+                    
+                    <h3>Video editor</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum ipsa voluptatibus dolorem vitae
+                        nobis voluptatum, hic eum qui similique minus?</p>
+                </div>
+            </div>
+
+
+        </section>
+        <hr id="contact">
+        <section class="fourthsection">
+            <div class="head">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="contact">
+            <p>Email: </p>
+            <input type="text" placeholder="Enter Email" id="email">
+            <p>Password: </p>
+            <input type="password" placeholder="Enter Password" id="pass">
+            <p>Message: </p>
+            <input type="text" placeholder="Enter Message" id="mess">
+        <button id="submit">Submit</button> 
+        </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div class="flex">
+            <div class="first">
+                <h3>Satyam's Developer Portfolio</h3>
+            </div>
+            <div class="second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; satyamsportfolio.com | All right reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Video Editor'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script src="por.js"></script>
+
+</body>
+
+</html>
