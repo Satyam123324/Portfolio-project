@@ -67,17 +67,6 @@ main hr {
     font-size: 38px;
 
 }
-
-.leftsection #btn {
-    padding: 12px;
-    border: 2px solid white;
-    border-radius: 8px;
-    background-color: #2e4a67;
-    font-size: 12px;
-    color: white;
-    cursor: pointer;
-}
-
 .leftsection #rebtn {
     padding: 12px;
     border: 2px solid white;
