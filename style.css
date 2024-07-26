@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+    font-family: "poppins", sans-serif;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    background-color: #1b263b;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0e1dd;
+}
+
+nav ul li a:hover {
+    color: #778da9;
+    font-size: 1.01rem;
+}
+
+main hr {
+    border: 0;
+    background-color: #aeccf3;
+    height: 1.2px;
+    margin: 65px 84px;
+}
+
+.left {
+    font-size: 26px;
+}
+
+.firstsection {
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 0;
+    align-items: center;
+}
+
+.firstsection>div {
+    width: 30%;
+}
+
+.leftsection {
+    font-size: 38px;
+
+}
+
+.leftsection #btn {
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #2e4a67;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.leftsection #rebtn {
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #2e4a67;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.rightsection img {
+    width: 90%;
+}
+
+.col {
+    color: #aeccf3;
+}
+
+.rudra {
+    color: #778da9;
+}
+
+#element {
+    color: #aeccf3;
+}
+
+.secondsection {
+    max-width: 80vw;
+    margin: auto;
+    height: 70vh;
+}
+
+.secondsection h1 {
+    font-size: 1.8rem;
+}
+
+.secondsection .box {
+    background-color: #aeccf3;
+    width: 80vw;
+    height: 2px;
+    margin: 56px 0;
+    display: flex;
+}
+
+.secondsection .vertical {
+    height: 93px;
+    width: 1px;
+    background-color: #aeccf3;
+    margin: 0 6.5vw;
+}
+
+.thirdsection {
+    max-width: 80vw;
+    margin: auto;
+    height: 70vh;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    padding: 22px;
+    background-color: #2e4a67;
+    margin-inline: 20px;
+    border-radius: 5px;
+    margin-top: 45px;
+}
+
+.card p {
+    margin-top: 11px;
+}
+
+.fourthsection {
+    max-width: 80vw;
+    margin: auto;
+    height: 70vh;
+}
+
+
+.fourthsection .contact {
+    padding: 20px;
+    background-color: #2e4a67;
+    width: 300px;
+    margin: auto;
+    margin-top: 45px;
+}
+
+.fourthsection input {
+    width: 90%;
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid whitesmoke;
+    background-color: transparent;
+    color: aliceblue;
+    margin-top: 3px;
+}
+
+.fourthsection p {
+    margin-top: 20px;
+}
+
+.contact button {
+    width: 90px;
+    height: 28px;
+    background-color: #778da9;
+    color: aliceblue;
+    font-size: 17px;
+    margin-top: 22px;
+    border: none;
+}
+
+.head h1 {
+    font-size: 1.8rem;
+}
+
+.top {
+    width: 23px;
+    position: relative;
+    top: -28px;
+    left: -9px;
+}
+
+.verticaltitle {
+    position: relative;
+    width: 75px;
+    top: 70px;
+    left: -29px;
+    color: #e0e1dd;
+
+}
+
+footer {
+    background-color: #1b2539;
+}
+
+.flex {
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+}
+
+.flex ul {
+    list-style: none;
+}
+
+.flex>div {
+    width: 223px;
+}
+
+footer .footer-rights {
+    text-align: center;
+    color: #778da9;
+    padding: 10px 0;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .firstsection {
+        flex-direction: column-reverse;
+    }
+
+    .box {
+        flex-direction: column;
+
+    }
+
+    .secondsection .vertical {
+        height: unset;
+    }
+
+    .verticaltitle {
+        left: 45px;
+    }
+
+    .secondsection .box {
+        width: 70vw;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .leftsection {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rightsection {
+        width: 72% !important;
+        display: flex;
+        justify-content: center;
+    }
+    .rightsection img{
+        width: 45vw;
+        margin-bottom: 73px;
+    }
+
+    .secondsection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main hr{
+        margin-top: 300px;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    main hr{
+        margin-top: 600px;
+    }
+    .verticaltitle{
+         
+            top: -45px;
+    }
+    .top{
+        margin-top: 50px;
+    }
+}
+
