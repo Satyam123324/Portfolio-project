@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# build output
+client/dist/
+dist/
+
+# env & secrets
+.env
+**/.env
+!**/.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / os
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# vite temp
+vite.config.js.timestamp-*
+*.timestamp-*.mjs
