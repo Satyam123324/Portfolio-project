@@ -92,9 +92,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .section__eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 0.78rem; color: var(--grad-b); font-weight: 600; margin-bottom: 10px; }
 .section__title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 48px; }
 
-/* Reveal on scroll */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal--in { opacity: 1; transform: none; }
+/* Reveal on scroll — with a subtle 3D pop */
+.reveal { opacity: 0; transform: perspective(900px) rotateX(7deg) translateY(32px); transform-origin: center top; transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal--in { opacity: 1; transform: perspective(900px) rotateX(0deg) translateY(0); }
+@keyframes floaty { 50% { transform: translateY(-10px); } }
 
 /* Hero entrance */
 .hero-in { opacity: 0; transform: translateY(26px); animation: heroIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
@@ -262,3 +263,126 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto; }
   .reveal, .hero-in { opacity: 1; transform: none; }
 }
+
+/* ---------- Education extras ---------- */
+.timeline__inst { color: var(--text); font-size: 0.85rem; margin-bottom: 4px; }
+.timeline__score { display: inline-block; font-size: 0.72rem; color: var(--grad-c); font-weight: 600; margin-bottom: 6px; }
+
+/* ---------- Experience ---------- */
+.exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+.exp { perspective: 1000px; }
+.exp__tilt {
+  position: relative; height: 100%; border-radius: var(--radius); padding: 26px;
+  background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(14px);
+  transform-style: preserve-3d; transition: border-color 0.3s, box-shadow 0.3s; overflow: hidden; will-change: transform;
+}
+.exp__tilt:hover { border-color: var(--grad-a); box-shadow: 0 30px 70px -30px rgba(124, 92, 255, 0.5); }
+.exp__glow { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.35s;
+  background: radial-gradient(340px 200px at var(--mx, 50%) var(--my, 0%), rgba(34, 211, 238, 0.16), transparent 70%); }
+.exp__tilt:hover .exp__glow { opacity: 1; }
+.exp__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.exp__role { font-family: var(--font-display); font-size: 1.15rem; }
+.exp__company { color: var(--grad-b); font-weight: 600; font-size: 0.9rem; margin-top: 2px; }
+.exp__period { font-size: 0.74rem; color: var(--muted); border: 1px solid var(--border-str); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.exp__period--now { color: #05060f; background: var(--grad-b); border-color: transparent; font-weight: 600; }
+.exp__points { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.exp__points li { position: relative; padding-left: 20px; color: var(--muted); font-size: 0.92rem; }
+.exp__points li::before { content: '▹'; position: absolute; left: 0; color: var(--grad-a); }
+
+/* ---------- Certifications (3D flip) ---------- */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-bottom: 36px; }
+.cert { perspective: 1200px; }
+.cert__flip { position: relative; width: 100%; height: 180px; transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.cert:hover .cert__flip { transform: rotateY(180deg); }
+.cert__face { position: absolute; inset: 0; border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; border: 1px solid var(--border); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.cert__face--front { background: var(--glass); backdrop-filter: blur(14px); }
+.cert__face--back { background: linear-gradient(140deg, rgba(124, 92, 255, 0.28), rgba(34, 211, 238, 0.2)); transform: rotateY(180deg); border-color: var(--border-str); }
+.cert__icon { font-size: 2.2rem; animation: floaty 4s ease-in-out infinite; }
+.cert__title { font-family: var(--font-display); font-size: 1.05rem; }
+.cert__issuer { color: var(--muted); font-size: 0.85rem; }
+.cert__badge { font-weight: 700; color: #fff; letter-spacing: 1px; margin-bottom: 4px; }
+.cert__face--back p { font-family: var(--font-display); font-weight: 600; }
+.cert__face--back small { color: rgba(255,255,255,0.75); }
+
+/* soft skills */
+.soft { text-align: center; }
+.soft__heading { font-family: var(--font-display); margin-bottom: 16px; font-size: 1.1rem; color: var(--muted); }
+.soft__list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.soft__chip { padding: 9px 18px; border-radius: 999px; background: var(--glass); border: 1px solid var(--border-str); backdrop-filter: blur(10px); font-weight: 500; font-size: 0.9rem; transition: 0.25s; }
+.soft__chip:hover { border-color: var(--grad-b); transform: translateY(-3px); color: #fff; }
+
+/* ---------- Chatbot ---------- */
+.bot { position: fixed; right: 22px; bottom: 22px; z-index: 200; }
+.bot__fab {
+  width: 58px; height: 58px; border-radius: 50%; border: none; cursor: pointer;
+  font-size: 1.5rem; color: #fff; background: var(--gradient); background-size: 160% 160%;
+  box-shadow: 0 14px 34px -10px rgba(124, 92, 255, 0.8);
+  transition: transform 0.2s, background-position 0.5s;
+}
+.bot__fab:hover { transform: translateY(-3px) scale(1.05); background-position: 100% 0; }
+.bot--open .bot__fab { box-shadow: 0 10px 26px -10px rgba(0,0,0,0.6); }
+
+.bot__panel {
+  position: absolute; right: 0; bottom: 74px;
+  width: min(360px, calc(100vw - 32px)); height: 520px; max-height: calc(100vh - 120px);
+  display: flex; flex-direction: column; overflow: hidden;
+  border-radius: 20px; border: 1px solid var(--border-str);
+  background: rgba(12, 15, 30, 0.86); backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+  animation: botIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: bottom right;
+}
+@keyframes botIn { from { opacity: 0; transform: translateY(14px) scale(0.94); } to { opacity: 1; transform: none; } }
+
+.bot__head { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--border); background: rgba(124, 92, 255, 0.10); }
+.bot__avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; background: var(--gradient); }
+.bot__head strong { display: block; font-family: var(--font-display); font-size: 0.98rem; }
+.bot__status { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--muted); }
+.bot__status i { width: 7px; height: 7px; border-radius: 50%; background: #34d399; }
+.bot__reset { margin-left: auto; background: none; border: none; color: var(--muted); font-size: 1.05rem; cursor: pointer; padding: 4px 6px; border-radius: 8px; }
+.bot__reset:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+.bot__close { background: none; border: none; color: var(--muted); font-size: 1rem; cursor: pointer; padding: 4px 6px; }
+.bot__close:hover { color: var(--text); }
+
+/* notification dot on the bubble */
+.bot__dot { position: absolute; top: 2px; right: 2px; width: 13px; height: 13px; border-radius: 50%; background: #f472b6; border: 2px solid var(--bg); animation: pulse 2s infinite; }
+
+/* greeting teaser popup */
+.bot__tease {
+  position: absolute; right: 4px; bottom: 74px; max-width: 230px; text-align: left;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: 16px 16px 4px 16px; cursor: pointer;
+  background: rgba(12, 15, 30, 0.92); border: 1px solid var(--border-str); backdrop-filter: blur(14px);
+  color: var(--text); font-size: 0.88rem; font-weight: 500; box-shadow: var(--shadow);
+  animation: botIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bot__tease i { font-style: normal; color: var(--muted-2); font-size: 0.8rem; padding: 2px 4px; border-radius: 6px; }
+.bot__tease i:hover { color: var(--text); background: rgba(255,255,255,0.08); }
+
+.bot__body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.bot__msg { display: flex; }
+.bot__msg--user { justify-content: flex-end; }
+.bot__bubble {
+  max-width: 82%; padding: 10px 14px; border-radius: 14px; font-size: 0.9rem; line-height: 1.5;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+}
+.bot__msg--user .bot__bubble { background: var(--gradient); border: none; color: #fff; border-bottom-right-radius: 4px; }
+.bot__msg--bot .bot__bubble { border-bottom-left-radius: 4px; }
+.bot__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.bot__action { font-size: 0.8rem; padding: 6px 12px; border-radius: 999px; background: rgba(124,92,255,0.16); border: 1px solid var(--border-str); color: var(--text); transition: 0.2s; }
+.bot__action:hover { background: var(--gradient); border-color: transparent; }
+.bot__typing { display: flex; gap: 4px; }
+.bot__typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: botblink 1.2s infinite; }
+.bot__typing span:nth-child(2) { animation-delay: 0.2s; }
+.bot__typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes botblink { 0%, 60%, 100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+
+.bot__suggest { display: flex; gap: 8px; padding: 10px 12px 0; flex-wrap: wrap; }
+.bot__suggest button { font-size: 0.78rem; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-str); color: var(--muted); cursor: pointer; transition: 0.2s; }
+.bot__suggest button:hover { color: #fff; border-color: var(--grad-b); }
+
+.bot__input { display: flex; gap: 8px; padding: 12px; }
+.bot__input input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-str); border-radius: 999px; padding: 10px 16px; color: var(--text); font-family: inherit; font-size: 0.9rem; }
+.bot__input input:focus { outline: none; border-color: var(--grad-a); }
+.bot__input button { width: 40px; border: none; border-radius: 50%; background: var(--gradient); color: #fff; cursor: pointer; font-size: 0.9rem; transition: transform 0.2s; }
+.bot__input button:hover { transform: scale(1.08); }

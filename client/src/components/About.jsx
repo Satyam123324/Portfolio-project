@@ -45,6 +45,8 @@ export default function About() {
                   </span>
                 </div>
                 <h4 className="timeline__degree">{e.degree}</h4>
+                {e.institution && <p className="timeline__inst">{e.institution}</p>}
+                {e.score && <span className="timeline__score">{e.score}</span>}
                 <p className="timeline__detail">{e.detail}</p>
               </div>
             </div>
